@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@font-face {
+  font-family: 'Iosevka-medium';
+  src: url('../../public/Iosevka-ExtendedMedium.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Iosevka-bold';
+  src: url('../../public/Iosevka-ExtendedBold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Iosevka-medium', sans-serif;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  font-family: 'Iosevka-bold', sans-serif;
+}
