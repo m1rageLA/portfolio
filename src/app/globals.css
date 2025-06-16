@@ -6,7 +6,8 @@
 
   --header: #ffffff;
   --li: #d6d6d6;
-  --li-active: #383838;
+  --li-hover: #93dba1;
+
 }
 
 font-face {
@@ -44,6 +45,7 @@ font-face {
 
   --color-header: var(--header);
   --color-li: var(--li);
+  --color-li-hover: var(--li-hover);
 }
 
 @media (prefers-color-scheme: dark) {
