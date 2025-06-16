@@ -61,3 +61,28 @@ body {
   font-family: 'Iosevka', monospace;
   letter-spacing: 2px;
 }
+
+
+@keyframes glitch-shift {
+  0%   { --glitchX:   0px; --glitchY:  0px;  }
+  2%   { --glitchX:  -3px; --glitchY:  2px;  }
+  4%   { --glitchX:   3px; --glitchY: -2px;  }
+  6%   { --glitchX:  -2px; --glitchY:  1px;  }
+  8%   { --glitchX:   2px; --glitchY: -1px;  }
+  10%  { --glitchX:   0px; --glitchY:  0px;  }
+  /* повторяем «рывки» каждые ~ 0.8 с */
+  50%  { --glitchX:   1px; --glitchY: -2px;  }
+  52%  { --glitchX:  -4px; --glitchY:  3px;  }
+  54%  { --glitchX:   3px; --glitchY: -3px;  }
+  56%  { --glitchX:  -1px; --glitchY:  1px;  }
+  58%  { --glitchX:   0px; --glitchY:  0px;  }
+  100% { --glitchX:   0px; --glitchY:  0px;  }
+}
+
+.animate-glitch {
+  /* делаем «дёрганье» пошаговым, без сглаживания */
+  animation: glitch-shift 1.6s infinite steps(1);
+  /* объединяем два трансформа: параллакс + глитч */
+  transform: translate(var(--xOffset,0), var(--yOffset,0))
+             translate(var(--glitchX,0), var(--glitchY,0));
+} 
