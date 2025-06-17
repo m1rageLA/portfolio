@@ -16,7 +16,7 @@ export default function Header() {
   return (
     <div className="pt-6 flex justify-between w-full">
       <div className="text-header text-lg font-bold">
-        <Link href="/">m1rageLA</Link>
+        <Link href="/">m<span className="text-console-green text-xl">1</span>rageLA</Link>
       </div>
 
       <ul className="flex gap-10 text-li font-light">
