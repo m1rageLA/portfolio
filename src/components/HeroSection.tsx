@@ -9,15 +9,18 @@ export default function HeroSection() {
         voluptatum blanditiis maxime consectetur, sunt quisquam quam
         molestias voluptas eligendi repellat vero at saepe.
       </p>
-      <div className="relative flex w-full h-6 gap-3 mt-6">
-        <a href=""><img className="w-full h-full" src="./telegram.png" alt="Telegram" /></a>
-        <a href="https://www.linkedin.com/in/tymur-rozhkovskyi-3a4874358/">
+      <div className="relative flex w-full h-6 gap-3 mt-6 group">
+        <a href="" className="transition-opacity duration-300 opacity-60 hover:opacity-100 group-hover:opacity-30">
+          <img className="w-full h-full" src="./telegram.png" alt="Telegram" />
+        </a>
+        <a href="https://www.linkedin.com/in/tymur-rozhkovskyi-3a4874358/" className="transition-opacity duration-300 opacity-60 hover:opacity-100 group-hover:opacity-30">
           <img className="w-full h-full" src="./linkedin.png" alt="LinkedIn" />
         </a>
-        <a href="https://github.com/m1rageLA">
+        <a href="https://github.com/m1rageLA" className="transition-opacity duration-300 opacity-60 hover:opacity-100 group-hover:opacity-30">
           <img className="w-full h-full" src="./github.png" alt="GitHub" />
         </a>
       </div>
+
     </section>
   );
 }
