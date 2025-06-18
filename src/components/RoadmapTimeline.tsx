@@ -3,142 +3,155 @@
 import { motion, useAnimation, Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
+import {
+  LucideIcon,
+  BookOpen,
+  GraduationCap,
+  Code2,
+  Briefcase,
+} from "lucide-react";
 
+/*********************************
+ * Data types & roadmap data
+ *********************************/
 interface Milestone {
-    id: string;
-    side: "left" | "right";
-    label: string;          // small caption (e.g. "1st Step" or "Frontend branch")
-    title: string;          // main text
-    sub?: string;           // optional sub-text
-    big?: boolean;          // big node == major stage
+  id: string;
+  label: string;
+  title: string;
+  sub?: string;
+  icon: LucideIcon;
+  big?: boolean;
 }
 
 const milestones: Milestone[] = [
-    {
-        id: "start",
-        side: "right",
-        label: "First steps",
-        title: "Первые шаги",
-        sub: "Basic HTML & CSS",
-        big: true,
-    },
-    {
-        id: "step-it",
-        side: "left",
-        label: "2016",
-        title: "Step IT Academy",
-        big: true,
-    },
-    {
-        id: "john-paul",
-        side: "right",
-        label: "2017–2018",
-        title: "John Paul II Academy",
-    },
-    {
-        id: "self-study",
-        side: "left",
-        label: "2019–2022",
-        title: "Self-study & Side Projects",
-    },
-    {
-        id: "clearmedia",
-        side: "right",
-        label: "2023",
-        title: "Clearmedia Internship",
-        sub: "Full-stack experience",
-        big: true,
-    },
+  {
+    id: "start",
+    label: "First steps",
+    title: "Первые шаги",
+    sub: "Basic HTML & CSS",
+    icon: BookOpen,
+  },
+  {
+    id: "step-it",
+    label: "2016",
+    title: "Step IT Academy",
+    icon: GraduationCap,
+    big: true,
+  },
+  {
+    id: "john-paul",
+    label: "2017–2018",
+    title: "John Paul II Academy",
+    icon: GraduationCap,
+  },
+  {
+    id: "self-study",
+    label: "2019–2022",
+    title: "Self-study",
+    icon: Code2,
+  },
+  {
+    id: "clearmedia",
+    label: "2023",
+    title: "Clearmedia Internship",
+    sub: "Full-stack experience",
+    icon: Briefcase,
+    big: true,
+  },
 ];
 
-// animation variants
+/*********************************
+ * Animation variants
+ *********************************/
 const lineVariants: Variants = {
-    hidden: { scaleY: 0 },
-    visible: {
-        scaleY: 1,
-        transition: { duration: 1.5, ease: "easeInOut", delay: 0.2 },
-    },
+  hidden: { scaleY: 0 },
+  visible: {
+    scaleY: 1,
+    transition: { duration: 1.5, ease: "easeInOut", delay: 0.2 },
+  },
 };
 
 const nodeVariants: Variants = {
-    hidden: { opacity: 0, scale: 0.5 },
-    visible: (i: number) => ({
-        opacity: 1,
-        scale: 1,
-        transition: { delay: 0.4 + i * 0.2, duration: 0.4, ease: "backOut" },
-    }),
+  hidden: { opacity: 0, scale: 0.5 },
+  visible: (i: number) => ({
+    opacity: 1,
+    scale: 1,
+    transition: { delay: 0.4 + i * 0.2, duration: 0.4, ease: "backOut" },
+  }),
 };
 
-export default function RoadmapTimeline() {
-    // trigger animation when component in viewport (once)
-    const controls = useAnimation();
-    const [ref, inView] = useInView({ triggerOnce: true, rootMargin: "-20%" });
+/*********************************
+ * Component
+ *********************************/
+export default function ProgrammerRoadmap() {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ triggerOnce: true, rootMargin: "-20%" });
 
-    useEffect(() => {
-        if (inView) controls.start("visible");
-    }, [inView, controls]);
+  useEffect(() => {
+    if (inView) controls.start("visible");
+  }, [inView, controls]);
 
-    return (
-        <section
-            ref={ref}
-            className="relative mx-auto w-[60vw] py-24 text-white font-sans select-none"
-        >
-            {/* central vertical line */}
-            <motion.span
-                className="absolute left-1/2 -translate-x-1/2 top-0 h-full w-px bg-white/30"
-                variants={lineVariants}
-                initial="hidden"
-                animate={controls}
-            />
+  return (
+    <section
+      ref={ref}
+      style={{ minHeight: "70vh" }}
+      className="relative w-full h-full sm:w-[45vw] px-4 sm:py-4 select-none font-sans"
+      aria-label="Roadmap timeline"
+    >
+      {/* Central vertical line */}
+      <motion.span
+        className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 h-full w-px bg-gradient-to-b from-console-green/80 via-white/40 to-white/10"
+        variants={lineVariants}
+        initial="hidden"
+        animate={controls}
+      />
 
-            {/* milestones */}
-            <ul className="space-y-24">
-                {milestones.map((m, i) => (
-                    <motion.li
-                        key={m.id}
-                        custom={i}
-                        variants={nodeVariants}
-                        initial="hidden"
-                        animate={controls}
-                        className="relative flex items-start"
-                    >
-                        {/* connector line from node to text */}
-                        <span
-                            className={`absolute top-2 ${
-                                /* horizontal line */
-                                m.side === "left" ? "right-1/2 mr-2" : "left-1/2 ml-2"
-                                } h-px w-8 bg-white/30`}
-                        />
+      {/* Timeline items evenly distributed by CSS-grid */}
+      <ul
+        className="grid h-full"
+        style={{ gridTemplateRows: `repeat(${milestones.length},1fr)` }}
+      >
+        {milestones.map((m, i) => {
+          const Icon = m.icon;
+          const isLeft = i % 2 === 0;
+          return (
+            <motion.li
+              key={m.id}
+              custom={i}
+              variants={nodeVariants}
+              initial="hidden"
+              animate={controls}
+              className="group relative flex items-center h-full"
+            >
+              {/* Node */}
+              <span
+                className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center rounded-full bg-console-green shadow-lg ring-4 ring-console-green/30 transition-transform duration-200 group-hover:scale-110 ${m.big ? "w-8 h-8" : "w-6 h-6"}`}
+              >
+                <Icon
+                  className={`${m.big ? "h-4 w-4" : "h-3 w-3"} text-black/80`}
+                  aria-hidden="true"
+                />
+              </span>
 
-                        {/* node */}
-                        <span
-                            className={`absolute left-1/2 -translate-x-1/2 w-${m.big ? "4" : "3"
-                                } h-${m.big ? "4" : "3"} rounded-full bg-white ${m.big ? "shadow-md" : ""}`}
-                        ></span>
+              {/* Horizontal connector (desktop) */}
+              <span
+                className={`hidden md:block absolute h-px w-14 bg-white/30 top-1/2 -translate-y-1/2 ${isLeft ? "right-1/2 mr-4" : "left-1/2 ml-4"}`}
+              />
 
-                        {/* content */}
-                        <div
-                            className={`max-w-[18rem] ${m.side === "left" ? "ml-auto pr-8 text-right" : "pl-8"
-                                }`}
-                        >
-                            {m.label && (
-                                <p className="text-xs uppercase tracking-wide text-console-green mb-1">
-                                    {m.label}
-                                </p>
-                            )}
-                            <h3
-                                className={`${m.big ? "text-lg font-semibold" : "text-base font-medium"
-                                    }`}
-                            >
-                                {m.title}
-                            </h3>
-                            {m.sub && (
-                                <p className="text-xs text-neutral-400 mt-1">{m.sub}</p>
-                            )}
-                        </div>
-                    </motion.li>
-                ))}
-            </ul>
-        </section>
-    );
+              {/* Text block */}
+              <div
+                className={`relative max-w-md md:max-w-sm ${isLeft ? "mr-auto text-right pr-8 md:pr-16" : "ml-auto text-left pl-8 md:pl-16"}`}
+              >
+                <p className="mb-1 text-xs uppercase tracking-widest text-console-green">
+                  {m.label}
+                </p>
+                <h3 className={`${m.big ? "text-lg font-semibold" : "text-base font-medium"} text-white drop-shadow-sm`}> {m.title}</h3>
+                {m.sub && <p className="mt-1 text-xs text-neutral-400">{m.sub}</p>}
+              </div>
+            </motion.li>
+          );
+        })}
+      </ul>
+    </section>
+  );
 }
