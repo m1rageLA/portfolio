@@ -87,3 +87,26 @@ body {
   transform: translate(var(--xOffset,0), var(--yOffset,0))
              translate(var(--glitchX,0), var(--glitchY,0));
 } 
+@keyframes grainShift {
+  0%, 100% { transform: translate(0, 0); }
+  20%      { transform: translate(-1%,  1%); }
+  40%      { transform: translate(-1%, -1%); }
+  60%      { transform: translate( 1%,  1%); }
+  80%      { transform: translate( 1%, -1%); }
+}
+
+@layer utilities {
+  .grain {
+    background-image:
+      /* светлые точки */
+      radial-gradient(rgba(255,255,255,0.12) 1px, transparent 1px),
+      /* тёмные точки */
+      radial-gradient(rgba(  0,  0,  0, 0.12) 1px, transparent 1px);
+    /* теперь оба слоя по 2×2px */
+    background-size: 2px 2px, 2px 2px;
+    mix-blend-mode: overlay;
+    opacity: .35;
+    animation: grainShift 6s steps(8) infinite;
+    pointer-events: none;
+  }
+}

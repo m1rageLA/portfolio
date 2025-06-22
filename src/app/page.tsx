@@ -4,46 +4,88 @@ import Footer from "@/components/Footer";
 import AsciiBackground from "@/components/AsciiBackground";
 import HeroSection from "@/components/HeroSection";
 import RoadmapTimeline from "@/components/RoadmapTimeline";
-import { Briefcase, User, Mail } from "lucide-react";
 import AboutSection from "@/components/AboutSection";
+import ProjectCard, { ProjectCardProps } from "@/components/ProjectCard";
+
+const projects: ProjectCardProps[] = [
+  {
+    title: "TS ➜ WASM Transpiler",
+    description:
+      "High-performance transpiler that converts TypeScript AST to Rust + WebAssembly.",
+    stack: ["TypeScript", "Rust", "WASM"],
+    updated: "22.06.2025",
+    status: "Ready",
+    repo: "https://github.com/you/ts-wasm",
+    preview: "https://graphicdesignjunction.com/wp-content/uploads/2019/04/web_ui_concepts_15.jpg",
+    highlight: true,
+  },
+  {
+    title: "TS ➜ WASM Transp32iler",
+    description:
+      "High-performance transpiler that converts TypeScript AST to Rust + WebAssembly.",
+    stack: ["TypeScript", "Rust", "WASM"],
+    updated: "22.06.2025",
+    status: "Ready",
+    repo: "https://github.com/you/ts-wasm",
+    preview: "https://graphicdesignjunction.com/wp-content/uploads/2019/04/web_ui_concepts_15.jpg",
+    highlight: true,
+  },
+  {
+    title: "TS ➜ WASM Transpi2ler",
+    description:
+      "High-performance transpiler that converts TypeScript AST to Rust + WebAssembly.",
+    stack: ["TypeScript", "Rust", "WASM"],
+    updated: "22.06.2025",
+    status: "Ready",
+    repo: "https://github.com/you/ts-wasm",
+    preview: "https://graphicdesignjunction.com/wp-content/uploads/2019/04/web_ui_concepts_15.jpg",
+    highlight: true,
+  },
+];
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-black text-white font-sans overflow-x-hidden">
+    <div className="h-screen bg-black text-white font-sans overflow-x-hidden">
+      <main className="snap-y snap-mandatory  scroll-smooth h-screen overflow-y-scroll">
 
-      <header className="px-[10%]">
-        <Header />
-      </header>
-
-      <main>
-        <section className="relative flex h-screen items-center overflow-hidden bg-black">
-          <AsciiBackground />
-          <div className="px-[10%] w-full">
+        <section
+          id="hero"
+          className="snap-start flex flex-col h-screen px-[10%]"
+        >
+          <header className=" py-6">
+            <Header />
+          </header>
+          <div className="relative flex-1  flex  items-center overflow-hidden">
+            <AsciiBackground />
             <HeroSection />
           </div>
         </section>
 
-        <section className="w-full h-screen bg-[#000] text-white">
-          <div className="px-[10%] py-10 grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
+        <section
+          id="about"
+          className="snap-start flex items-center justify-center h-screen px-[10%]"
+        >
+          <div className="grid w-full gap-10 md:grid-cols-2">
+            <AboutSection />
+            <RoadmapTimeline />
+          </div>
+        </section>
 
-            {/* Left column: About me */}
-            <div className="flex flex-col justify-center">
-              <AboutSection />
-            </div>
+        <section
+          id="projects"
+          className="snap-start flex items-center justify-center h-screen px-[10%]"
+        >
+          <div className="flex flex-wrap justify-center gap-8">
 
-            {/* Right column: Timeline */}
-            <div className="flex items-center justify-center">
-              <div className="w-full h-full">
-                <RoadmapTimeline />
-              </div>
-            </div>
-
+            {projects.map((p) => (
+              <ProjectCard key={p.title} {...p} />
+            ))}
           </div>
         </section>
 
       </main>
 
-      <footer className="px-[10%]">
+      <footer className="px-[10%] py-8">
         <Footer />
       </footer>
     </div>
