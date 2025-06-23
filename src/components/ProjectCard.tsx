@@ -71,7 +71,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.35 }}
-        className="w-80 overflow-hidden rounded-md bg-[#080808] p-4 shadow-lg shadow-black/60 ring-1 ring-neutral-700/60"
+        className=" overflow-hidden rounded-md bg-[#080808] p-4 shadow-lg shadow-black/60 ring-1 ring-neutral-700/60"
     >
         {/* ---------- превью + анимированное зерно ---------- */}
         {preview && (

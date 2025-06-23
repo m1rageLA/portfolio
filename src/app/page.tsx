@@ -6,8 +6,11 @@ import HeroSection from "@/components/HeroSection";
 import RoadmapTimeline from "@/components/RoadmapTimeline";
 import AboutSection from "@/components/AboutSection";
 import ProjectCard, { ProjectCardProps } from "@/components/ProjectCard";
+import ProjectShowcase from "@/components/ProjectShowcase";
 
-const projects: ProjectCardProps[] = [
+import type { Category } from "@/components/ProjectShowcase";
+
+const projects: (ProjectCardProps & { category: Category })[] = [
   {
     title: "TS ➜ WASM Transpiler",
     description:
@@ -18,6 +21,7 @@ const projects: ProjectCardProps[] = [
     repo: "https://github.com/you/ts-wasm",
     preview: "https://graphicdesignjunction.com/wp-content/uploads/2019/04/web_ui_concepts_15.jpg",
     highlight: true,
+    category: "System", // Replace with a valid Category value
   },
   {
     title: "TS ➜ WASM Transp32iler",
@@ -29,6 +33,7 @@ const projects: ProjectCardProps[] = [
     repo: "https://github.com/you/ts-wasm",
     preview: "https://graphicdesignjunction.com/wp-content/uploads/2019/04/web_ui_concepts_15.jpg",
     highlight: true,
+    category: "Frontend", // Add a valid Category value here
   },
   {
     title: "TS ➜ WASM Transpi2ler",
@@ -40,6 +45,7 @@ const projects: ProjectCardProps[] = [
     repo: "https://github.com/you/ts-wasm",
     preview: "https://graphicdesignjunction.com/wp-content/uploads/2019/04/web_ui_concepts_15.jpg",
     highlight: true,
+    category: "Frontend", // Replace with a valid Category value
   },
 ];
 
@@ -73,21 +79,16 @@ export default function Home() {
 
         <section
           id="projects"
-          className="snap-start flex items-center justify-center h-screen px-[10%]"
+          className="snap-start flex flex-col items-center justify-center h-screen px-[10%]"
         >
-          <div className="flex flex-wrap justify-center gap-8">
-
-            {projects.map((p) => (
-              <ProjectCard key={p.title} {...p} />
-            ))}
-          </div>
+          <ProjectShowcase projects={projects} />
         </section>
 
       </main>
 
-      <footer className="px-[10%] py-8">
+      {/* <footer className="px-[10%] py-8">
         <Footer />
-      </footer>
+      </footer> */}
     </div>
   );
 }
