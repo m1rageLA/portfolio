@@ -7,7 +7,7 @@ import RoadmapTimeline from "@/components/RoadmapTimeline";
 import AboutSection from "@/components/AboutSection";
 import ProjectCard, { ProjectCardProps } from "@/components/ProjectCard";
 import ProjectShowcase from "@/components/ProjectShowcase";
-
+import SectionNav from "@/components/SectionNav";
 import type { Category } from "@/components/ProjectShowcase";
 
 const projects: (ProjectCardProps & { category: Category })[] = [
@@ -52,6 +52,7 @@ const projects: (ProjectCardProps & { category: Category })[] = [
 export default function Home() {
   return (
     <div className="h-screen bg-black text-white font-sans overflow-x-hidden">
+      <SectionNav />
       <main className="snap-y snap-mandatory  scroll-smooth h-screen overflow-y-scroll">
 
         <section
