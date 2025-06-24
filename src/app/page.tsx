@@ -9,6 +9,7 @@ import ProjectCard, { ProjectCardProps } from "@/components/ProjectCard";
 import ProjectShowcase from "@/components/ProjectShowcase";
 import SectionNav from "@/components/SectionNav";
 import type { Category } from "@/components/ProjectShowcase";
+import SkillsTree from "@/components/ SkillsTree";
 
 const projects: (ProjectCardProps & { category: Category })[] = [
   {
@@ -85,6 +86,9 @@ export default function Home() {
           <ProjectShowcase projects={projects} />
         </section>
 
+        <section className="snap-start flex flex-col items-center justify-center h-screen px-[10%]">
+          <SkillsTree />
+        </section>
       </main>
 
       {/* <footer className="px-[10%] py-8">
