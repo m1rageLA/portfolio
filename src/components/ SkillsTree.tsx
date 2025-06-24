@@ -71,7 +71,7 @@ const branches: Branch[] = [
     {
         title: "Testing & Methodologies",
         skills: [
-            { name: "Vitest", level: 2 },
+            { name: "Vitest", level: 1 },
             { name: "TDD", level: 2 },
             { name: "OOP", level: 2 },
             { name: "Agile (Scrum)", level: 1 },
@@ -184,7 +184,7 @@ export default function SkillsTree() {
             style={{ "--console-green": consoleGreen } as React.CSSProperties}
         >
             {/* Heading */}
-            <h2 className="mb-4 text-4xl font-bold tracking-tight">My projects</h2>
+            <h2 className="mb-4 text-4xl font-bold tracking-tight">Skills</h2>
 
             {/* Professional legend */}
             <ul className="mb-14 flex flex-wrap items-center gap-6 pl-1" style={{ color: "rgba(255,255,255,0.75)" }}>

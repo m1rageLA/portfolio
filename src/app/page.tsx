@@ -11,42 +11,165 @@ import SectionNav from "@/components/SectionNav";
 import type { Category } from "@/components/ProjectShowcase";
 import SkillsTree from "@/components/ SkillsTree";
 
-const projects: (ProjectCardProps & { category: Category })[] = [
+const projects: (ProjectCardProps & { category: Category; id: string | number })[] = [
   {
-    title: "TS ➜ WASM Transpiler",
+    id: 1,
+    title: "Transpiler (compiler)",
     description:
       "High-performance transpiler that converts TypeScript AST to Rust + WebAssembly.",
     stack: ["TypeScript", "Rust", "WASM"],
     updated: "22.06.2025",
-    status: "Ready",
+    status: "in_progress",
     repo: "https://github.com/you/ts-wasm",
     preview: "https://graphicdesignjunction.com/wp-content/uploads/2019/04/web_ui_concepts_15.jpg",
     highlight: true,
+    category: "Best", // Replace with a valid Category value
+  },
+
+  {
+    id: 2,
+    title: "Internet store",
+    description:
+      "High-performance transpiler that converts TypeScript AST to Rust + WebAssembly.",
+    stack: ["Agile/SCRUM", "JavaScript", "React", "Firebase"],
+    updated: "22.06.2025",
+    status: "ready",
+    repo: "https://github.com/you/ts-wasm",
+    preview: "https://graphicdesignjunction.com/wp-content/uploads/2019/04/web_ui_concepts_15.jpg",
+    highlight: true,
+    category: "Best", // Add a valid Category value here
+  },
+  {
+    id: 3,
+    title: "Hackathon 2024 \n(24 hours)",
+    description:
+      "High-performance transpiler that converts TypeScript AST to Rust + WebAssembly.",
+    stack: ["JavaScript", "React", "Redux"],
+    updated: "22.06.2025",
+    status: "ready",
+    repo: "https://github.com/you/ts-wasm",
+    preview: "https://graphicdesignjunction.com/wp-content/uploads/2019/04/web_ui_concepts_15.jpg",
+    highlight: true,
+    category: "Best", // Replace with a valid Category value
+  },
+
+
+  //FRONTEND ====
+  //FRONTEND ====
+  //FRONTEND ====
+
+  {
+    id: 4,
+    title: "Internet store",
+    description:
+      "High-performance transpiler that converts TypeScript AST to Rust + WebAssembly.",
+    stack: ["Agile/SCRUM", "JavaScript", "React", "Firebase"],
+    updated: "22.06.2025",
+    status: "ready",
+    repo: "https://github.com/you/ts-wasm",
+    preview: "https://graphicdesignjunction.com/wp-content/uploads/2019/04/web_ui_concepts_15.jpg",
+    highlight: false,
+    category: "Frontend", // Replace with a valid Category value
+  },
+  {
+    id: 5,
+    title: "Nutrition app",
+    description:
+      "High-performance transpiler that converts TypeScript AST to Rust + WebAssembly.",
+    stack: ["Agile/SCRUM", "JavaScript", "React", "Firebase"],
+    updated: "22.06.2025",
+    status: "ready",
+    repo: "https://github.com/you/ts-wasm",
+    preview: "https://graphicdesignjunction.com/wp-content/uploads/2019/04/web_ui_concepts_15.jpg",
+    highlight: false,
+    category: "Frontend", // Replace with a valid Category value
+  },
+  {
+    id: 6,
+    title: "Project estimator system",
+    description:
+      "High-performance transpiler that converts TypeScript AST to Rust + WebAssembly.",
+    stack: ["Agile/SCRUM", "JavaScript", "React", "Firebase"],
+    updated: "22.06.2025",
+    status: "ready",
+    repo: "https://github.com/you/ts-wasm",
+    preview: "https://graphicdesignjunction.com/wp-content/uploads/2019/04/web_ui_concepts_15.jpg",
+    highlight: false,
+    category: "Frontend", // Replace with a valid Category value
+  },
+
+  //BACKEND
+  //BACKEND
+  //BACKEND
+
+  {
+    id: 7,
+    title: "Estimator system (backend)",
+    description:
+      "High-performance transpiler that converts TypeScript AST to Rust + WebAssembly.",
+    stack: ["TypeScript", "Rust", "WASM"],
+    updated: "22.06.2025",
+    status: "in_progress",
+    repo: "https://github.com/you/ts-wasm",
+    preview: "https://graphicdesignjunction.com/wp-content/uploads/2019/04/web_ui_concepts_15.jpg",
+    highlight: false,
+    category: "Backend", // Replace with a valid Category value
+  },
+  {
+    id: 8,
+    title: "microservices (backend)",
+    description:
+      "High-performance transpiler that converts TypeScript AST to Rust + WebAssembly.",
+    stack: ["TypeScript", "Rust", "WASM"],
+    updated: "22.06.2025",
+    status: "in_progress",
+    repo: "https://github.com/you/ts-wasm",
+    preview: "https://graphicdesignjunction.com/wp-content/uploads/2019/04/web_ui_concepts_15.jpg",
+    highlight: false,
+    category: "Backend", // Replace with a valid Category value
+  },
+  // {
+  //   id: 9,
+  //   title: "Multithreaded web server",
+  //   description:
+  //     "High-performance transpiler that converts TypeScript AST to Rust + WebAssembly.",
+  //   stack: ["TypeScript", "Rust", "WASM"],
+  //   updated: "22.06.2025",
+  //   status: "in_progress",
+  //   repo: "https://github.com/you/ts-wasm",
+  //   preview: "https://graphicdesignjunction.com/wp-content/uploads/2019/04/web_ui_concepts_15.jpg",
+  //   highlight: false,
+  //   category: "Backend", // Replace with a valid Category value
+  // },
+
+  //System ====
+  //System ====
+  //System ====
+  {
+    id: 10,
+    title: "Transpiler (compiler)",
+    description:
+      "High-performance transpiler that converts TypeScript AST to Rust + WebAssembly.",
+    stack: ["TypeScript", "Rust", "WASM"],
+    updated: "22.06.2025",
+    status: "in_progress",
+    repo: "https://github.com/you/ts-wasm",
+    preview: "https://graphicdesignjunction.com/wp-content/uploads/2019/04/web_ui_concepts_15.jpg",
+    highlight: false,
     category: "System", // Replace with a valid Category value
   },
   {
-    title: "TS ➜ WASM Transp32iler",
+    id: 11,
+    title: "Multithreaded web server",
     description:
       "High-performance transpiler that converts TypeScript AST to Rust + WebAssembly.",
     stack: ["TypeScript", "Rust", "WASM"],
     updated: "22.06.2025",
-    status: "Ready",
+    status: "in_progress",
     repo: "https://github.com/you/ts-wasm",
     preview: "https://graphicdesignjunction.com/wp-content/uploads/2019/04/web_ui_concepts_15.jpg",
-    highlight: true,
-    category: "Frontend", // Add a valid Category value here
-  },
-  {
-    title: "TS ➜ WASM Transpi2ler",
-    description:
-      "High-performance transpiler that converts TypeScript AST to Rust + WebAssembly.",
-    stack: ["TypeScript", "Rust", "WASM"],
-    updated: "22.06.2025",
-    status: "Ready",
-    repo: "https://github.com/you/ts-wasm",
-    preview: "https://graphicdesignjunction.com/wp-content/uploads/2019/04/web_ui_concepts_15.jpg",
-    highlight: true,
-    category: "Frontend", // Replace with a valid Category value
+    highlight: false,
+    category: "System", // Replace with a valid Category value
   },
 ];
 
@@ -86,14 +209,20 @@ export default function Home() {
           <ProjectShowcase projects={projects} />
         </section>
 
-        <section className="snap-start flex flex-col items-center justify-center h-screen px-[10%]">
+        <section id="skills" className="snap-start flex flex-col items-center justify-center h-screen px-[10%]">
           <SkillsTree />
+        </section>
+
+        <section id="contacts" className="snap-start flex flex-col items-center justify-center px-[10%] py-8 h-screen">
+          <footer>
+            <Footer />
+          </footer>
         </section>
       </main>
 
-      {/* <footer className="px-[10%] py-8">
-        <Footer />
-      </footer> */}
+
+
+
     </div>
   );
 }

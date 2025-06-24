@@ -10,7 +10,7 @@ export default function HeroSection() {
         molestias voluptas eligendi repellat vero at saepe.
       </p>
       <div className="relative flex w-full h-6 gap-3 mt-6 group">
-        <a href="" className="transition-opacity duration-300 opacity-60 hover:opacity-100 group-hover:opacity-30">
+        <a href="https://t.me/tmrrozh" className="transition-opacity duration-300 opacity-60 hover:opacity-100 group-hover:opacity-30">
           <img className="w-full h-full" src="./telegram.png" alt="Telegram" />
         </a>
         <a href="https://www.linkedin.com/in/tymur-rozhkovskyi-3a4874358/" className="transition-opacity duration-300 opacity-60 hover:opacity-100 group-hover:opacity-30">

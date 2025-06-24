@@ -44,16 +44,16 @@ export interface ProjectCardProps {
     description: string;
     stack: string[];
     updated: string;
-    status: "Ready" | "WIP" | "Archived";
+    status: "ready" | "in_progress" | "archived";
     repo: string;
     preview?: string;
     highlight?: boolean;
 }
 
 const statusDot: Record<ProjectCardProps["status"], string> = {
-    Ready: "bg-console-green",
-    WIP: "bg-yellow-400",
-    Archived: "bg-neutral-500",
+    ready: "bg-console-green",
+    in_progress: "bg-yellow-400",
+    archived: "bg-neutral-500",
 };
 
 const ProjectCard: FC<ProjectCardProps> = ({
@@ -93,7 +93,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
             </h3>
             {highlight && (
                 <span className="select-none rounded-sm bg-console-green px-2 py-0.5 text-[10px] font-bold leading-none text-black">
-                    Best_
+                    Best
                 </span>
             )}
         </header>
