@@ -181,7 +181,7 @@ export default function Home() {
 
         <section
           id="hero"
-          className="snap-start flex flex-col h-screen px-[10%]"
+          className="snap-start flex flex-col h-screen px-4 md:px-[10%]"
         >
           <header className=" py-6">
             <Header />
@@ -194,7 +194,7 @@ export default function Home() {
 
         <section
           id="about"
-          className="snap-start flex items-center justify-center h-screen px-[10%]"
+          className="snap-start flex items-center justify-center h-screen px-4 md:px-[10%]"
         >
           <div className="grid w-full gap-10 md:grid-cols-2">
             <AboutSection />
@@ -204,16 +204,16 @@ export default function Home() {
 
         <section
           id="projects"
-          className="snap-start flex flex-col items-center justify-center h-screen px-[10%]"
+          className="snap-start flex flex-col items-center justify-center h-screen px-4 md:px-[10%]"
         >
           <ProjectShowcase projects={projects} />
         </section>
 
-        <section id="skills" className="snap-start flex flex-col items-center justify-center h-screen px-[10%]">
+        <section id="skills" className="snap-start flex flex-col items-center justify-center h-screen px-4 md:px-[10%]">
           <SkillsTree />
         </section>
 
-        <section id="contacts" className="snap-start flex flex-col items-center justify-center px-[10%] py-8 h-screen">
+        <section id="contacts" className="snap-start flex flex-col items-center justify-center px-4 md:px-[10%] py-8 h-screen">
           <footer>
             <Footer />
           </footer>
