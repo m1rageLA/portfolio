@@ -177,13 +177,13 @@ export default function Home() {
   return (
     <div className="h-screen bg-black text-white font-sans overflow-x-hidden">
       <SectionNav />
-      <main className="snap-y snap-mandatory  scroll-smooth h-screen overflow-y-scroll">
+      <main className="snap-y snap-mandatory scroll-smooth h-screen overflow-y-scroll">
 
         <section
           id="hero"
-          className="snap-start flex flex-col h-screen px-[10%]"
+          className="snap-start flex flex-col min-h-screen px-4 md:px-[10%] py-12"
         >
-          <header className=" py-6">
+          <header className="py-6">
             <Header />
           </header>
           <div className="relative flex-1  flex  items-center overflow-hidden">
@@ -194,9 +194,9 @@ export default function Home() {
 
         <section
           id="about"
-          className="snap-start flex items-center justify-center h-screen px-[10%]"
+          className="snap-start flex items-center justify-center min-h-screen px-4 md:px-[10%] py-12"
         >
-          <div className="grid w-full gap-10 md:grid-cols-2">
+          <div className="flex flex-col gap-16 w-full md:grid md:grid-cols-2 md:gap-10">
             <AboutSection />
             <RoadmapTimeline />
           </div>
@@ -204,16 +204,16 @@ export default function Home() {
 
         <section
           id="projects"
-          className="snap-start flex flex-col items-center justify-center h-screen px-[10%]"
+          className="snap-start flex flex-col items-center justify-center min-h-screen px-4 md:px-[10%] py-12"
         >
           <ProjectShowcase projects={projects} />
         </section>
 
-        <section id="skills" className="snap-start flex flex-col items-center justify-center h-screen px-[10%]">
+        <section id="skills" className="snap-start flex flex-col items-center justify-center min-h-screen px-4 md:px-[10%] py-12">
           <SkillsTree />
         </section>
 
-        <section id="contacts" className="snap-start flex flex-col items-center justify-center px-[10%] py-8 h-screen">
+        <section id="contacts" className="snap-start flex flex-col items-center justify-center px-4 md:px-[10%] py-12 min-h-screen">
           <footer>
             <Footer />
           </footer>
