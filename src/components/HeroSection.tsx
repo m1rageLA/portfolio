@@ -1,8 +1,8 @@
 export default function HeroSection() {
   return (
     <section className="relative z-20 max-w-[45ch]">
-      <h1 className="text-lg font-bold tracking-[0.05em]">I'm Tymur&nbsp;Rozhkovskyi</h1>
-      <h2 className="text-5xl font-extrabold mb-4">Web developer</h2>
+      <h1 className="text-base sm:text-lg font-bold tracking-[0.05em]">I'm Tymur&nbsp;Rozhkovskyi</h1>
+      <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4">Web developer</h2>
       <p className="text-xs leading-relaxed text-neutral-400">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
         nihil mollitia corporis quis inventore voluptatibus praesentium
