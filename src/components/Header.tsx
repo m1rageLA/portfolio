@@ -53,7 +53,7 @@ export default function Header() {
               className={`
                 relative pb-1 transition-all duration-200
                 ${active === id
-                  ? "border-b-2 border-console-green"
+                  ? "text-white"
                   : "hover:text-li-hover"}
               `}
             >

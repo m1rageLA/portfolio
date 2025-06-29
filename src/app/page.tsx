@@ -34,8 +34,8 @@ const projects: (ProjectCardProps & { category: Category; id: string | number })
     stack: ["Agile/SCRUM", "JavaScript", "React", "Firebase"],
     updated: "22.06.2025",
     status: "ready",
-    repo: "https://github.com/you/ts-wasm",
-    preview: "https://graphicdesignjunction.com/wp-content/uploads/2019/04/web_ui_concepts_15.jpg",
+    repo: "https://github.com/m1rageLA/internet-store/tree/main",
+    preview: "./internet-store.png",
     highlight: true,
     category: "Best", // Add a valid Category value here
   },
