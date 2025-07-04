@@ -31,7 +31,7 @@ const branches: Branch[] = [
             { name: "React", level: 1 },
             { name: "React Native", level: 2 },
             { name: "Next.js", level: 1 },
-            { name: "WebAssembly", level: 2 },
+            { name: "WebAssembly", level: 3},
             { name: "CSS / SCSS", level: 1 },
             { name: "TailwindCSS", level: 1 },
             { name: "Semantic HTML", level: 1 },

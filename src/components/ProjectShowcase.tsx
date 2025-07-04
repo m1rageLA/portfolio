@@ -9,7 +9,6 @@ import {
 } from "framer-motion";
 import ProjectCard, { ProjectCardProps } from "./ProjectCard";
 
-/* --- типы --- */
 export type Category =
   | "Best"
   | "Frontend"
@@ -44,8 +43,7 @@ export default function ProjectShowcase({ projects }: ProjectShowcaseProps) {
   );
 
   return (
-    <section className="w-250">
-      {/* ---------- Заголовок + фильтр ---------- */}
+    <section className="w-full">
       <header className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <h2 className="text-4xl font-bold tracking-tight bg-gradient-to-r from-console-green via-white to-console-green/60 bg-clip-text select-none">
           Projects
@@ -69,7 +67,6 @@ export default function ProjectShowcase({ projects }: ProjectShowcaseProps) {
         </nav>
       </header>
 
-      {/* ---------- Сетка проектов ---------- */}
       <LayoutGroup>
         <motion.div
           layout="position"
