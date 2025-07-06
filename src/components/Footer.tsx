@@ -4,8 +4,10 @@ import { MouseEventHandler, useMemo } from 'react';
 // local social icons (place .png or .svg in /public/icons)
 const socials = [
     { href: 'https://t.me/tmrrozh', src: '/telegram.png', alt: 'Telegram' },
-    { href: 'https://www.linkedin.com/in/tymur', src: './linkedin.png', alt: 'LinkedIn' },
-    { href: 'https://github.com/tymur', src: '/github.png', alt: 'GitHub' },
+    { href: 'https://www.linkedin.com/in/tymur-rozhkovskyi-3a4874358/', src: './linkedin.png', alt: 'LinkedIn' },
+    { href: 'https://github.com/m1rageLA?tab=repositories', src: '/github.png', alt: 'GitHub' },
+    { href: 'https://www.behance.net/mirage_LA', src: '/behance.png', alt: 'Behance' },
+    { href: 'https://www.fiverr.com/s/pdXz97Z', src: '/fiverr.png', alt: 'Fiverr' },
 ];
 
 export default function Footer() {

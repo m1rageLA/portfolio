@@ -2,7 +2,6 @@
 import { motion } from "framer-motion";
 import { FC, PropsWithChildren } from "react";
 
-/* ---------- маленький вспомогательный компонент ---------- */
 const MovingNoise: FC<PropsWithChildren<{ className?: string }>> = ({
     className = "",
 }) => (
@@ -11,7 +10,6 @@ const MovingNoise: FC<PropsWithChildren<{ className?: string }>> = ({
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
     >
-        {/* анимируемый шум */}
         <filter id="noiseFilter">
             <feTurbulence
                 type="fractalNoise"
@@ -43,9 +41,10 @@ export interface ProjectCardProps {
     title: string;
     description: string;
     stack: string[];
-    updated: string;
+    released: string
     status: "ready" | "in_progress" | "archived";
     repo: string;
+    website?: string;
     preview?: string;
     highlight?: boolean;
 }
@@ -60,8 +59,9 @@ const ProjectCard: FC<ProjectCardProps> = ({
     title,
     description,
     stack,
-    updated,
+    released,
     status,
+    website,
     repo,
     preview,
     highlight = false,
@@ -75,7 +75,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
     >
         {/* ---------- превью + анимированное зерно ---------- */}
         {preview && (
-            <div className="relative mb-3 h-32 w-full overflow-hidden rounded-sm">
+            <div className="relative mb-3 h-45 w-full overflow-hidden rounded-sm">
                 <img
                     src={preview}
                     alt={`${title} preview`}
@@ -118,8 +118,8 @@ const ProjectCard: FC<ProjectCardProps> = ({
         {/* ---------- мета ---------- */}
         <ul className="mb-3 space-y-1 font-mono text-[10px] text-li/70">
             <li className="flex justify-between">
-                <span>Updated</span>
-                <span>{updated}</span>
+                <span>Released</span>
+                <span>{released}</span>
             </li>
             <li className="flex items-center gap-1">
                 <span
@@ -129,15 +129,31 @@ const ProjectCard: FC<ProjectCardProps> = ({
             </li>
         </ul>
 
-        {/* ---------- ссылка на репозиторий ---------- */}
-        <a
-            href={repo}
-            className="underline decoration-console-green/40 underline-offset-2 transition hover:text-console-green"
-            target="_blank"
-            rel="noreferrer"
-        >
-            ↗ Repo
-        </a>
+        <div className="mt-3 flex justify-between items-center">
+            {/* Repo link on the left */}
+            <a
+                href={repo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-console-green/40 underline-offset-2 transition hover:text-console-green"
+            >
+                ↗ Repo
+            </a>
+
+            {/* Visit Site button on the right */}
+            {website && (
+                <motion.a
+                    href={website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.97 }}
+                    className="inline-flex items-center gap-1 rounded-md bg-console-green/10 px-3 py-1 text-xs font-semibold tracking-wide text-console-green transition-colors hover:bg-console-green/20"
+                >
+                Visit Site
+                </motion.a>
+            )}
+        </div>
     </motion.article>
 );
 
