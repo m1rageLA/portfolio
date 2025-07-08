@@ -219,7 +219,7 @@ export default function SkillsTree() {
                                 <motion.li
                                     key={skill.name}
                                     variants={item}
-                                    className="mb-1.5 w-44 rounded-md border px-3 py-1 text-center text-[0.7rem] font-medium backdrop-blur"
+                                    className="mb-1.5 w-[70%] rounded-md border px-3 py-1 text-center text-[0.7rem] font-medium backdrop-blur"
                                     style={pillStyle(skill)}
                                 >
                                     {skill.name}

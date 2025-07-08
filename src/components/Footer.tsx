@@ -42,7 +42,7 @@ export default function Footer() {
     return (
         <footer
             id="contact"
-            className="relative h-screen flex flex-col justify-between bg-black text-gray-100 px-6 md:px-24 py-12"
+            className="relative md:h-screen min-h-screen flex flex-col justify-between bg-black text-gray-100 px-6 md:px-24 py-12"
         >
             {/* neon pulse line */}
             <div className="pointer-events-none absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-[#5cff96]/0 via-[#5cff96]/70 to-[#5cff96]/0 animate-pulse" />
@@ -52,24 +52,21 @@ export default function Footer() {
                       bg-[radial-gradient(#5cff96_1px,transparent_1px)]
                       [background-size:6px_6px]" />
             <div className="z-10 flex-1 w-full grid grid-cols-12 gap-10 place-content-center">
-                <div className="col-span-12 md:col-span-6">
+                <div className="col-span-12 md:col-span-6 text-center">
                     <h2 className="text-2xl md:text-3xl font-semibold mb-6 tracking-wide ">
                         Services
                     </h2>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 text-sm md:text-base text-gray-300">
+                    <ul className="mx-auto w-fit list-disc space-y-2 text-sm md:text-base text-gray-300 marker:text-[#5cff96]">
                         {services.map((item) => (
-                            <li key={item} className="flex items-start gap-3 group">
-                                <span className="mt-[6px] h-[6px] w-[6px] rounded-full bg-[#5cff96] group-hover:scale-125 transition-transform" />
-                                <span className="leading-snug group-hover:text-white transition-colors duration-200">
-                                    {item}
-                                </span>
+                            <li key={item} className="leading-snug hover:text-white transition-colors duration-200">
+                                {item}
                             </li>
                         ))}
                     </ul>
                 </div>
 
                 {/* Contact block (spans 6 columns on md+) */}
-                <div className="col-span-12 md:col-span-6 flex flex-col justify-center md:items-end mt-14 md:mt-0">
+                <div className="col-span-12 md:col-span-6 flex flex-col items-center text-center justify-center md:items-end md:text-right mt-14 md:mt-0">
                     <h2 className="text-2xl md:text-3xl font-semibold mb-6 tracking-wide uppercase">
                         Get in touch
                     </h2>
