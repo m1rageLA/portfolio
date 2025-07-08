@@ -12,10 +12,10 @@ export default function HeroSection() {
       <h1 className="text-lg font-bold tracking-[0.05em]">I'm Tymur&nbsp;Rozhkovskyi</h1>
       <h2 className="text-5xl font-extrabold mb-4">Web developer</h2>
       <p className="text-xs leading-relaxed text-neutral-400">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
-        nihil mollitia corporis quis inventore voluptatibus praesentium
-        voluptatum blanditiis maxime consectetur, sunt quisquam quam
-        molestias voluptas eligendi repellat vero at saepe.
+        with 6 years of specialized education in computer science.
+        I've worked in startups, led dev teams, built my own projects,
+        and participated in fast-paced hackathon. I also gained hands-on
+        experience through internships in Europe. 
       </p>
       <div className="mt-8 flex gap-3 group">
         {socials.map(({ href, src, alt }) => (

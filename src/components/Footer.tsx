@@ -19,14 +19,14 @@ export default function Footer() {
         () => [
             'Web-apps & SPA',
             'Mobile apps (React Native)',
-            'API & microservices',
+            'Custom APIs & backend services',
             'Realtime / WebSocket',
-            'Cloud & DevOps (Docker, CI/CD)',
+            'Cloud infrastructure (Docker, CI/CD, Firebase)',
             'Performance optimisation',
             'Testing & QA automation',
             'UI / UX engineering',
-            'Technical leadership & mentoring',
-            'Code audits & consulting',
+            'Technical leadership',
+            'WASM integration',
         ],
         []
     );

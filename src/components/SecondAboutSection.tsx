@@ -17,15 +17,21 @@ export default function SecondAboutSection() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="relative max-w-[60ch] text-li"
       >
-        {/* декоративная вертикальная линия слева */}
+        <span
+          className="pointer-events-none absolute -left-6 inset-y-1 w-px
+             bg-gradient-to-t
+               from-console-green/70
+               via-console-green/30
+               to-transparent"
+        />
 
-        {/* декоративная вертикальная линия слева */}
-        <span className="pointer-events-none absolute -left-6 top-1 h-full w-px bg-gradient-to-t from-console-green/70 via-console-green/30 to-transparent" />
-        <span className="absolute -left-7 bottom-0.5 h-2 w-2 rounded-full bg-console-green shadow-[0_0_8px_2px_var(--tw-console-green)]" />
-        {/* заголовок */}
+        <span
+          className="absolute -left-7 bottom-0 h-2 w-2 rounded-full
+             bg-console-green
+             shadow-[0_0_8px_2px_var(--tw-console-green)]"
+        />
+
         <h2 className="mb-4 text-4xl font-bold tracking-tight">Experience</h2>
-
-        {/* текст (вернули исходные стили) */}
         <p className="text-xs leading-relaxed">
           At Clearmedia (Poland), I worked as a full-stack developer within a compact Agile team, participating in the full delivery cycle: from planning and implementation to testing and refinement.
           <br /><br />
@@ -34,8 +40,6 @@ export default function SecondAboutSection() {
           I completed 6 years of formal education in software engineering, but the majority of my practical knowledge has come through self-driven learning.
         </p>
 
-        {/* нижний декоративный акцент – белый */}
-        {/* <div className="mt-6 h-1 w-20 rounded-full bg-white" /> */}
       </motion.section>
 
     </div>
