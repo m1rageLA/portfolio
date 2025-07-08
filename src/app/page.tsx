@@ -168,9 +168,9 @@ export default function HomePage() {
     <div className="h-screen bg-black text-white font-sans overflow-x-hidden">
       {/* вертикальный snap‑scroll на уровне секций */}
       <SectionNav />
-      <main className="snap-y snap-mandatory scroll-smooth h-screen overflow-y-scroll">
+      <main className="scroll-smooth md:snap-y md:snap-mandatory md:h-screen md:overflow-y-scroll">
         {/* ───────────────────────── Hero ───────────────────────── */}
-        <section id="hero" className="snap-start h-screen flex flex-col px-[10%]">
+        <section id="hero" className="md:snap-start md:h-screen min-h-screen flex flex-col px-[10%]">
           <header className="py-6">
             <Header />
           </header>
@@ -181,7 +181,7 @@ export default function HomePage() {
         </section>
 
         {/* ───────────────────────── About + part‑1 timeline ───────────────────────── */}
-        <section id="about" className="snap-start h-screen flex items-center justify-center px-[10%]">
+        <section id="about" className="md:snap-start md:h-screen min-h-screen flex items-center justify-center px-[10%]">
           <div className="grid w-full gap-10 md:grid-cols-2">
             <AboutSection />
             {/* левая/правая колонка зависит от md‑breakpoint */}
@@ -190,7 +190,7 @@ export default function HomePage() {
         </section>
 
         {/* ───────────────────────── Timeline continuation ───────────────────────── */}
-        <section id="about-cont" className="snap-start h-screen flex items-center justify-center px-[10%]">
+        <section id="about-cont" className="md:snap-start md:h-screen min-h-screen flex items-center justify-center px-[10%]">
 
           <div className="grid w-full gap-10 md:grid-cols-2">
             <SecondAboutSection />
@@ -200,17 +200,17 @@ export default function HomePage() {
         </section>
 
         {/* ───────────────────────── Projects ───────────────────────── */}
-        <section id="projects" className="snap-start h-screen flex items-center justify-center px-[10%]">
+        <section id="projects" className="md:snap-start md:h-screen min-h-screen flex items-center justify-center px-[10%]">
           <ProjectShowcase projects={projects} />
         </section>
 
         {/* ───────────────────────── Skills ───────────────────────── */}
-        <section id="skills" className="snap-start h-screen flex items-center justify-center px-[10%]">
+        <section id="skills" className="md:snap-start md:h-screen min-h-screen flex items-center justify-center px-[10%]">
           <SkillsTree />
         </section>
 
         {/* ───────────────────────── Contacts / Footer ───────────────────────── */}
-        <section id="contacts" className="snap-start h-screen flex items-center justify-center px-[10%] py-8">
+        <section id="contacts" className="md:snap-start md:h-screen min-h-screen flex items-center justify-center px-[10%] py-8">
           <footer>
             <Footer />
           </footer>

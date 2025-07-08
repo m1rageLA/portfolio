@@ -42,7 +42,7 @@ export default function Footer() {
     return (
         <footer
             id="contact"
-            className="relative h-screen flex flex-col justify-between bg-black text-gray-100 px-6 md:px-24 py-12"
+            className="relative md:h-screen min-h-screen flex flex-col justify-between bg-black text-gray-100 px-6 md:px-24 py-12"
         >
             {/* neon pulse line */}
             <div className="pointer-events-none absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-[#5cff96]/0 via-[#5cff96]/70 to-[#5cff96]/0 animate-pulse" />
