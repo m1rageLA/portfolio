@@ -194,7 +194,7 @@ export default function SkillsTree() {
             </ul>
 
             {/* Skills – five columns */}
-            <div className="mt-1 grid grid-cols-1 gap-5 md:grid-cols-5">
+            <div className="mt-1 grid grid-cols-1 gap-5 lg:grid-cols-5">
                 {branches.map((branch, idx) => {
                     const sortedSkills = [...branch.skills].sort((a, b) => a.level - b.level);
                     return (
@@ -219,7 +219,7 @@ export default function SkillsTree() {
                                 <motion.li
                                     key={skill.name}
                                     variants={item}
-                                    className="mb-1.5 w-44 rounded-md border px-3 py-1 text-center text-[0.7rem] font-medium backdrop-blur"
+                                    className="mb-1.5 w-[70%] rounded-md border px-3 py-1 text-center text-[0.7rem] font-medium backdrop-blur"
                                     style={pillStyle(skill)}
                                 >
                                     {skill.name}
