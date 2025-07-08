@@ -26,21 +26,18 @@ export default function AboutSection() {
 
                 {/* текст (вернули исходные стили) */}
                 <p className="text-xs leading-relaxed">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, sequi
-                    incidunt. Reiciendis in aspernatur voluptate doloribus, dolor neque
-                    perspiciatis sunt aliquam assumenda exercitationem ab necessitatibus
-                    soluta commodi dolores animi architecto. Sequi incidunt. Reiciendis in
-                    aspernatur voluptate doloribus, dolor neque perspiciatis sunt aliquam
-                    assumenda exercitationem ab necessitatibus soluta commodi dolores animi
-                    architecto.
+                    Hi! I'm a web developer with international experience working in Poland and Spain. I build scalable and user-friendly web applications with a strong focus on design and architecture.
                     <br />
                     <br />
-                    Sequi incidunt. Reiciendis in aspernatur voluptate doloribus, dolor
-                    neque perspiciatis sunt aliquam assumenda exercitationem ab
-                    necessitatibus soluta commodi dolores animi architecto. Sequi incidunt.
-                    Reiciendis in aspernatur voluptate doloribus, dolor neque perspiciatis
-                    sunt aliquam assumenda exercitationem ab necessitatibus soluta commodi
-                    dolores animi architecto.
+                    My main stack is frontend development (React, Next.js) along with full‑stack solutions using Node.js. I’ve worked in startups, legal tech platforms, led development teams, and participated in hackathon.
+                    <br />
+                    <br />
+                    I'm particularly interested in low-level web processes — especially browser engines and performance optimization of platforms like Node.js through code transpilation and format tuning.
+                    <br />
+                    <br />
+                    I enjoy learning and applying new technologies by building small practical projects. This hands-on approach helps me quickly understand how tools behave in real-world use cases.
+
+
                 </p>
 
                 {/* нижний декоративный акцент – белый */}

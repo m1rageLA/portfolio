@@ -12,6 +12,10 @@ import ProjectShowcase from "@/components/ProjectShowcase";
 import SkillsTree from "@/components/ SkillsTree";
 import type { Category } from "@/components/ProjectShowcase";
 import type { ProjectCardProps } from "@/components/ProjectCard";
+import SectionNav from "@/components/SectionNav";
+import SecondAboutSection from "@/components/SecondAboutSection";
+
+
 
 /******************************************************
  * Demo‑данные проектов (можешь вынести в отдельный файл)
@@ -162,6 +166,7 @@ export default function HomePage() {
   return (
     <div className="h-screen bg-black text-white font-sans overflow-x-hidden">
       {/* вертикальный snap‑scroll на уровне секций */}
+      <SectionNav />
       <main className="snap-y snap-mandatory scroll-smooth h-screen overflow-y-scroll">
         {/* ───────────────────────── Hero ───────────────────────── */}
         <section id="hero" className="snap-start h-screen flex flex-col px-[10%]">
@@ -187,7 +192,7 @@ export default function HomePage() {
         <section id="about-cont" className="snap-start h-screen flex items-center justify-center px-[10%]">
 
           <div className="grid w-full gap-10 md:grid-cols-2">
-            <AboutSection />
+            <SecondAboutSection />
             {/* во второй секции линия идёт сверху‑вниз, пипка снизу */}
             <RoadmapTimeline part="second" />
           </div>
