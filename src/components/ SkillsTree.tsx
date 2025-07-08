@@ -194,7 +194,7 @@ export default function SkillsTree() {
             </ul>
 
             {/* Skills – five columns */}
-            <div className="mt-1 grid grid-cols-1 gap-5 md:grid-cols-5">
+            <div className="mt-1 grid grid-cols-1 gap-5 lg:grid-cols-5">
                 {branches.map((branch, idx) => {
                     const sortedSkills = [...branch.skills].sort((a, b) => a.level - b.level);
                     return (

@@ -42,7 +42,7 @@ export default function Footer() {
     return (
         <footer
             id="contact"
-            className="relative md:h-screen min-h-screen flex flex-col justify-between bg-black text-gray-100 px-6 md:px-24 py-12"
+            className="relative lg:h-screen min-h-screen flex flex-col justify-between bg-black text-gray-100 px-6 lg:px-24 py-12"
         >
             {/* neon pulse line */}
             <div className="pointer-events-none absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-[#5cff96]/0 via-[#5cff96]/70 to-[#5cff96]/0 animate-pulse" />
@@ -52,11 +52,11 @@ export default function Footer() {
                       bg-[radial-gradient(#5cff96_1px,transparent_1px)]
                       [background-size:6px_6px]" />
             <div className="z-10 flex-1 w-full grid grid-cols-12 gap-10 place-content-center">
-                <div className="col-span-12 md:col-span-6 text-center">
+                <div className="col-span-12 lg:col-span-6 text-center">
                     <h2 className="text-2xl md:text-3xl font-semibold mb-6 tracking-wide ">
                         Services
                     </h2>
-                    <ul className="mx-auto w-fit list-none md:list-disc space-y-2 text-sm md:text-base text-gray-300 md:marker:text-[#5cff96]">
+                    <ul className="mx-auto w-fit list-none lg:list-disc space-y-2 text-sm lg:text-base text-gray-300 lg:marker:text-[#5cff96]">
                         {services.map((item) => (
                             <li key={item} className="leading-snug hover:text-white transition-colors duration-200">
                                 {item}
@@ -66,14 +66,14 @@ export default function Footer() {
                 </div>
 
                 {/* Contact block (spans 6 columns on md+) */}
-                <div className="col-span-12 md:col-span-6 flex flex-col items-center text-center justify-center md:items-end md:text-right mt-14 md:mt-0">
+                <div className="col-span-12 lg:col-span-6 flex flex-col items-center text-center justify-center lg:items-end lg:text-right mt-14 lg:mt-0">
                     <h2 className="text-2xl md:text-3xl font-semibold mb-6 tracking-wide uppercase">
                         Get in touch
                     </h2>
 
                     <a
                         href="mailto:tymurrozhkovskyi@gmail.com"
-                        className="inline-block text-sm md:text-base font-medium text-[#5cff96] hover:underline decoration-[#5cff96]/70 underline-offset-4"
+                        className="inline-block text-sm lg:text-base font-medium text-[#5cff96] hover:underline decoration-[#5cff96]/70 underline-offset-4"
                     >
                         tymurrozhkovskyi@gmail.com
                     </a>
@@ -89,7 +89,7 @@ export default function Footer() {
                                 rel="noopener noreferrer"
                                 className="transition-opacity duration-300 opacity-60 hover:opacity-100 group-hover:opacity-30"
                             >
-                                <img className="w-8 h-8 md:w-6 md:h-6" src={src} alt={alt} />
+                                <img className="w-8 h-8 lg:w-6 lg:h-6" src={src} alt={alt} />
                             </a>
                         ))}
                     </div>
@@ -97,7 +97,7 @@ export default function Footer() {
             </div>
 
             {/* footer bottom */}
-            <div className="z-10 flex items-center justify-between text-[11px] md:text-xs text-gray-500 mt-0">
+            <div className="z-10 flex items-center justify-between text-[11px] lg:text-xs text-gray-500 mt-10 lg:mt-0">
                 <span>© {new Date().getFullYear()} Tymur Rozhkovskyi</span>
 
                 <button
@@ -116,5 +116,4 @@ export default function Footer() {
                     </svg>
                 </button>
             </div>
-        </footer>
-    );}
+        </footer>    );}

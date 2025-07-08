@@ -19,7 +19,7 @@ export default function AsciiBackground() {
   }, []);
 
   return (
-    <div className="hidden md:block absolute inset-y-0 right-0 w-3/5 overflow-hidden select-none">
+    <div className="hidden lg:block absolute inset-y-0 right-0 w-3/5 overflow-hidden select-none">
       <div className="pointer-events-none absolute inset-y-0 left-0 w-1/6 bg-gradient-to-r from-black/80 to-transparent z-10" />
       <div className="pointer-events-none absolute inset-y-0 right-0 w-1/8 bg-gradient-to-l from-black/80 to-transparent z-10" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-black/80 to-transparent z-10" />
