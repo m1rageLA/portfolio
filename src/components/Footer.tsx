@@ -56,7 +56,7 @@ export default function Footer() {
                     <h2 className="text-2xl md:text-3xl font-semibold mb-6 tracking-wide ">
                         Services
                     </h2>
-                    <ul className="mx-auto w-fit list-disc space-y-2 text-sm md:text-base text-gray-300 marker:text-[#5cff96]">
+                    <ul className="mx-auto w-fit list-none md:list-disc space-y-2 text-sm md:text-base text-gray-300 md:marker:text-[#5cff96]">
                         {services.map((item) => (
                             <li key={item} className="leading-snug hover:text-white transition-colors duration-200">
                                 {item}
@@ -97,7 +97,7 @@ export default function Footer() {
             </div>
 
             {/* footer bottom */}
-            <div className="z-10 flex items-center justify-between text-[11px] md:text-xs text-gray-500 mt-10 md:mt-0">
+            <div className="z-10 flex items-center justify-between text-[11px] md:text-xs text-gray-500 mt-0">
                 <span>© {new Date().getFullYear()} Tymur Rozhkovskyi</span>
 
                 <button
@@ -117,5 +117,4 @@ export default function Footer() {
                 </button>
             </div>
         </footer>
-    );
-}
+    );}
