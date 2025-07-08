@@ -166,7 +166,7 @@ export default function RoadmapTimeline({
         <section
             ref={ref}
             aria-label="Roadmap timeline"
-            className="relative flex min-h-screen w-full items-center px-5 select-none font-sans"
+            className="relative flex w-full items-center px-5 select-none font-sans md:min-h-screen"
         >
             {/* центральная вертикальная линия */}
             <motion.span

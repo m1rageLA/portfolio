@@ -165,12 +165,12 @@ import SecondAboutSection from "@/components/SecondAboutSection";
  ******************************************************/
 export default function HomePage() {
   return (
-    <div className="h-screen bg-black text-white font-sans overflow-x-hidden">
-      {/* вертикальный snap‑scroll на уровне секций */}
+    <div className="bg-black text-white font-sans overflow-x-hidden md:h-screen">
+      {/* вертикальный snap‑scroll на уровне секций на десктопе */}
       <SectionNav />
-      <main className="snap-y snap-mandatory scroll-smooth h-screen overflow-y-scroll">
+      <main className="scroll-smooth md:h-screen md:overflow-y-scroll md:snap-y md:snap-mandatory">
         {/* ───────────────────────── Hero ───────────────────────── */}
-        <section id="hero" className="snap-start h-screen flex flex-col px-[10%]">
+        <section id="hero" className="flex flex-col px-[10%] md:snap-start md:h-screen">
           <header className="py-6">
             <Header />
           </header>
@@ -181,7 +181,7 @@ export default function HomePage() {
         </section>
 
         {/* ───────────────────────── About + part‑1 timeline ───────────────────────── */}
-        <section id="about" className="snap-start h-screen flex items-center justify-center px-[10%]">
+        <section id="about" className="flex items-center justify-center px-[10%] md:snap-start md:h-screen">
           <div className="grid w-full gap-10 md:grid-cols-2">
             <AboutSection />
             {/* левая/правая колонка зависит от md‑breakpoint */}
@@ -190,7 +190,7 @@ export default function HomePage() {
         </section>
 
         {/* ───────────────────────── Timeline continuation ───────────────────────── */}
-        <section id="about-cont" className="snap-start h-screen flex items-center justify-center px-[10%]">
+        <section id="about-cont" className="flex items-center justify-center px-[10%] md:snap-start md:h-screen">
 
           <div className="grid w-full gap-10 md:grid-cols-2">
             <SecondAboutSection />
@@ -200,17 +200,17 @@ export default function HomePage() {
         </section>
 
         {/* ───────────────────────── Projects ───────────────────────── */}
-        <section id="projects" className="snap-start h-screen flex items-center justify-center px-[10%]">
+        <section id="projects" className="flex items-center justify-center px-[10%] md:snap-start md:h-screen">
           <ProjectShowcase projects={projects} />
         </section>
 
         {/* ───────────────────────── Skills ───────────────────────── */}
-        <section id="skills" className="snap-start h-screen flex items-center justify-center px-[10%]">
+        <section id="skills" className="flex items-center justify-center px-[10%] md:snap-start md:h-screen">
           <SkillsTree />
         </section>
 
         {/* ───────────────────────── Contacts / Footer ───────────────────────── */}
-        <section id="contacts" className="snap-start h-screen flex items-center justify-center px-[10%] py-8">
+        <section id="contacts" className="flex items-center justify-center px-[10%] py-8 md:snap-start md:h-screen">
           <footer>
             <Footer />
           </footer>
