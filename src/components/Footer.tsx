@@ -97,8 +97,10 @@ export default function Footer() {
             </div>
 
             {/* footer bottom */}
-            <div className="z-10 flex items-center justify-between text-[11px] lg:text-xs text-gray-500 mt-10 lg:mt-0">
-                <span>© {new Date().getFullYear()} Tymur Rozhkovskyi</span>
+            <div className="z-10 flex flex-col items-center gap-6 text-[11px] lg:text-xs text-gray-500 mt-20 lg:mt-0 pb-10">
+
+
+                <span className='mt-10'>© {new Date().getFullYear()} Tymur Rozhkovskyi</span>
 
                 <button
                     onClick={scrollTop}
@@ -116,4 +118,5 @@ export default function Footer() {
                     </svg>
                 </button>
             </div>
-        </footer>    );}
+        </footer>);
+}

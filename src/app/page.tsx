@@ -168,7 +168,7 @@ export default function HomePage() {
     <div className="h-screen bg-black text-white font-sans overflow-x-hidden">
       {/* вертикальный snap‑scroll на уровне секций */}
       <SectionNav />
-      <main className="scroll-smooth lg:snap-y lg:snap-mandatory lg:h-screen lg:overflow-y-scroll">
+      <main className="scroll-smooth">
         {/* ───────────────────────── Hero ───────────────────────── */}
         <section id="hero" className="lg:snap-start lg:h-screen min-h-screen flex flex-col px-[10%]">
           <header className="py-6">

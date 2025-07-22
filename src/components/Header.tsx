@@ -3,10 +3,10 @@ import Link from "next/link";
 import { useEffect, useState, MouseEvent } from "react";
 
 const navItems = [
-  { name: "Home",     id: "hero"     },
-  { name: "About",    id: "about"    },
+  { name: "Home", id: "hero" },
+  { name: "About", id: "about" },
   { name: "Projects", id: "projects" },
-  { name: "Skills",   id: "skills"   },
+  { name: "Skills", id: "skills" },
   { name: "Contacts", id: "contacts" },
 ];
 
@@ -41,40 +41,42 @@ export default function Header() {
 
   return (
     <>
-      <div className="relative pt-6 flex items-center justify-center w-full">
-        {/* menu icon on small screens and tablets */}
-        <button
-          onClick={() => setMenuOpen(true)}
-          aria-label="Open menu"
-          className="absolute right-0 lg:hidden p-2"
-        >
-          <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
+      <div className="relative pt-6 w-full">
+        <div className="flex items-center justify-between w-full">
+          {/* logo слева */}
+          <div className="text-lg font-semibold">
+            <Link href="/">m<span className="text-console-green text-xl">1</span>rageLA</Link>
+          </div>
 
-        {/* logo centered */}
-        <div className="absolute left-1/2 -translate-x-1/2 text-lg font-semibold">
-          <Link href="/">m<span className="text-console-green text-xl">1</span>rageLA</Link>
+          {/* десктоп навигация справа */}
+          <ul className="hidden lg:flex gap-10 text-li font-light">
+            {navItems.map(({ name, id }) => (
+              <li key={id}>
+                <Link
+                  href={`#${id}`}
+                  onClick={(e) => handleClick(e, id)}
+                  className={`
+              relative pb-1 transition-all duration-200
+              ${active === id ? "text-white" : "hover:text-li-hover"}
+            `}
+                >
+                  {name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          {/* иконка меню (только на мобильных) */}
+          <button
+            onClick={() => setMenuOpen(true)}
+            aria-label="Open menu"
+            className="lg:hidden p-2"
+          >
+            <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
         </div>
-
-        {/* nav list on desktop */}
-        <ul className="hidden lg:flex gap-10 text-li font-light absolute right-0">
-          {navItems.map(({ name, id }) => (
-            <li key={id}>
-              <Link
-                href={`#${id}`}
-                onClick={(e) => handleClick(e, id)}
-                className={`
-                  relative pb-1 transition-all duration-200
-                  ${active === id ? "text-white" : "hover:text-li-hover"}
-                `}
-              >
-                {name}
-              </Link>
-            </li>
-          ))}
-        </ul>
       </div>
 
       {/* mobile menu modal */}
